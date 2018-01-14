@@ -1,19 +1,10 @@
-#!/bin/sh
-# Images are taken from the "hell so easy to use (basic) API" of Unsplash, they are totally free for all use.
-
-# The downloaded images are kept in ~/.local/share/unsplashLinux if the following switch is false.
-DO_WE_ERASE_FILES=false
-
-WORKDIR=$HOME'/.local/share/unsplashLinux/'
+#!/bin/bash
+WORKDIR="$HOME/Wallpaper/"
 RANT=$(date +%s)
-mkdir -p $WORKDIR
-mkdir -p $WORKDIR'old'
 
-wget -q --spider http://google.com
-if [ $? -eq 0 ]; then
-	echo internetIsUp
-else
-	exit 1
+wget -q --spider https://www.bing.com
+if [ $? != 0 ]; then
+	exit
 fi
 
 if $DO_WE_ERASE_FILES
